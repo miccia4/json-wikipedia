@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.cnr.isti.hpc</groupId>
 	<artifactId>json-wikipedia</artifactId>
@@ -15,7 +16,7 @@
 	<properties>
 		<project.source.charset>UTF-8</project.source.charset>
 		<project.source.encoding>UTF-8</project.source.encoding>
-                <java.version.source>1.7</java.version.source>
+		<java.version.source>1.7</java.version.source>
 		<java.version.target>1.7</java.version.target>
 	</properties>
 	<developers>
@@ -127,48 +128,44 @@
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
-                    </repository>
-                    <repository>
-                        <id>dropbox</id>
-                        <url>https://dl.dropboxusercontent.com/u/4663256/mvn-repository/</url>
-                    </repository>
-                </repositories>
-                <build>
-                    <!-- <extensions>
-                                    <extension>
-                                       <groupId>org.apache.maven.wagon</groupId>
-                                       <artifactId>wagon-ssh</artifactId>
-                                       <version>3.1.1</version>
-                                     </extension>
-                                   </extensions> -->
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <encoding>${project.source.encoding}</encoding>
-                            <source>${java.version.source}</source>
-                            <target>${java.version.target}</target>
-                        </configuration>
-                        <version>3.3</version>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.4</version>
-                        <configuration>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9</version>
-                        <configuration>
-                            <reportOutputDirectory>javadoc</reportOutputDirectory>
-                            <destDir>javadoc</destDir>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </project>
+		</repository>
+		<repository>
+			<id>dropbox</id>
+			<url>https://dl.dropboxusercontent.com/u/4663256/mvn-repository/</url>
+		</repository>
+	</repositories>
+	<build>
+		<!-- <extensions> <extension> <groupId>org.apache.maven.wagon</groupId> 
+			<artifactId>wagon-ssh</artifactId> <version>3.1.1</version> </extension> 
+			</extensions> -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>${project.source.encoding}</encoding>
+					<source>${java.version.source}</source>
+					<target>${java.version.target}</target>
+				</configuration>
+				<version>3.3</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<reportOutputDirectory>javadoc</reportOutputDirectory>
+					<destDir>javadoc</destDir>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
