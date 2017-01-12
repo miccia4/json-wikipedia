@@ -106,9 +106,7 @@ public class WikipediaArticleReader {
 			logger.error("creating the parser {}", e.toString());
 			System.exit(-1);
 		}
-
-		out = IOUtils.getPlainOrCompressedUTF8Writer(outputFile
-				.getAbsolutePath());
+		out = IOUtils.getPlainOrCompressedUTF8Writer(outputFile.getAbsolutePath());
 
 	}
 
@@ -116,7 +114,6 @@ public class WikipediaArticleReader {
 	 * Starts the parsing
 	 */
 	public void start() throws IOException, SAXException {
-
 		wxp.parse();
 		out.close();
 		logger.info(sw.stat("articles"));
