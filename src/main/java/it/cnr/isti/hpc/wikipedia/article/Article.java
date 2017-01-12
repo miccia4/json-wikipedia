@@ -34,7 +34,6 @@ public class Article {
     // LoggerFactory.getLogger(Article.class);
 
     private final static String NOTITLE = "";
-
     private static transient Gson gson = new Gson();
 
     /** The possible types of an article (e.g., template, article, category) **/
@@ -54,23 +53,23 @@ public class Article {
     private String timestamp;
     private Type type = Type.ARTICLE;
     private String enWikiTitle;
-    private List<Link> images;
+    private transient List<Link> images;
     protected List<List<String>> lists;
     private List<Link> links;
     private List<Link> externalLinks;
-    protected String redirect;
-    private List<String> sections;
-    private List<Link> categories;
-    private List<Template> templates;
-    private List<String> templatesSchema;
-    private transient String summary;
-    private Template infobox;
+    protected transient String redirect;
+    private transient List<String> sections;
+    private transient List<Link> categories;
+    private transient List<Template> templates;
+    private transient List<String> templatesSchema;
+    private transient String summary;// it is the only one to be really "transient"
+    private transient Template infobox; 
     
     /* Of interest for our Json output */
     
     private int wid;
     private String lang;
-    private List<String> highlights;
+    private transient List<String> highlights;
     private List<Table> tables;
     private List<String> paragraphs;
     private List<String> paragraphsWithMentions;
